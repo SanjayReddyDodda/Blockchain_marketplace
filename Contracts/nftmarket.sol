@@ -13,7 +13,6 @@ contract Marketplace {
     }
     Item[] public items;
     uint public itemCount = 0;
-
     event ItemListed(
         uint id,
         address indexed seller,
@@ -46,11 +45,9 @@ contract Marketplace {
         require(msg.value >= item.price, "Not enough Ether provided");
         require(!item.sold, "Item already sold");
         require(msg.sender != item.seller, "Seller cannot buy their own item");
-
         item.seller.transfer(item.price);
         item.owner = msg.sender;
         item.sold = true;
-
         emit ItemSold(_id, item.seller, msg.sender, item.price);
     }
     function getItem(uint _id) public view returns (Item memory) {
