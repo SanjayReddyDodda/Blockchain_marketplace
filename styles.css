@@ -1,0 +1,80 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    padding: 20px;
+}
+h1 {
+    color: #58a6ff;
+    text-align: center;
+}
+h2 {
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+input {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    color: #c9d1d9;
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 10px;
+    display: block;
+}
+button {
+    background-color: #21262d;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #58a6ff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #30363d;
+}
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #1f6feb;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    border-bottom: 1px solid #30363d;
+}
+#connectWallet {
+    display: block;
+    margin: 20px auto;
+}
+#itemsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item-entry {
+    border: 1px solid #3f1e1e;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4a4c51;
+}
+
+.item-info, .transaction-info {
+    margin-bottom: 5px;
+}
+
+.item-info strong, .transaction-info strong {
+    color: #ff0101;
+}
+
+a {
+    color: #06c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
