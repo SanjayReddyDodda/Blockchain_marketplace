@@ -113,7 +113,9 @@ static_files: index.html: No matter what URL is requested, this configuration te
   * Only the items which are shown in available items can be bought by the current user.
   * If the current user tries to buy an item which is already sold or the id does not exist in the block chain an alert is popped.
 
-
+### Trasanction Hashes
+* The trasaction hashes are only visible if a new item is listed into the marketplace or an item is bought from the marketplace.
+* The trasaction hashes are hyper-linked to Sepolia etherscan website to verify the trasactions.
   
 
 
