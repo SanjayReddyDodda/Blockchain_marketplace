@@ -7,13 +7,13 @@ pragma solidity ^0.8.0;
 contract Marketplace {
     /* Defines the structure of an item within the marketplace.*/
     struct Item {
-        uint id;                // Unique identifier for tracking items.
-        address payable seller; // Address of the item's seller.
-        address owner;          // Address of the item's current owner.
-        string title;           // Title of the item.
-        string description;     // Description of the item.
-        uint price;             // Price of the item in wei.
-        bool sold;              // Status of the item, sold or not.
+        uint id;                
+        address payable seller; 
+        address owner;          
+        string title;           
+        string description;     
+        uint price;            
+        bool sold;             
     }
 
     Item[] public items;
