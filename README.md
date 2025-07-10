@@ -1,5 +1,35 @@
 # Blockchain_marketplace
 ### Project Link - https://blockchain-project-422215.uc.r.appspot.com/
+### GitHub Pages (Auto-deployed) - https://sanjayreddydodda.github.io/Blockchain_marketplace/
+
+## 🚀 Automated Deployment
+
+This project now features **automated deployment** using GitHub Actions! Every push to the main branch automatically deploys to GitHub Pages.
+
+### Deployment Features:
+- ✅ **Automated CI/CD pipeline** with GitHub Actions
+- ✅ **Multi-target deployment** (GitHub Pages, Google App Engine)
+- ✅ **Build validation** (HTML, CSS, JavaScript)
+- ✅ **Environment variable support** for contract addresses
+- ✅ **Automated testing** of deployed site
+- ✅ **Network validation** for MetaMask connections
+
+### Quick Start for Contributors:
+1. Fork this repository
+2. Enable GitHub Pages in Settings → Pages → Source: GitHub Actions
+3. Push changes to main branch
+4. Site automatically deploys to `https://yourusername.github.io/Blockchain_marketplace/`
+
+### Environment Variables (Optional):
+Set in GitHub Repository Settings → Secrets and variables → Actions → Variables:
+- `CONTRACT_ADDRESS`: Override the default contract address
+- `NETWORK_ID`: Specify the Ethereum network ID (default: 11155111 for Sepolia)
+
+### Manual Validation:
+```bash
+# Run validation script
+./scripts/validate-deployment.sh
+```
 
 ### Technologies Used
 * Remix IDE (for contract generation and deployment)
@@ -116,6 +146,60 @@ static_files: index.html: No matter what URL is requested, this configuration te
 ### Transanction Hashes
 * The trasaction hashes are only visible if a new item is listed into the marketplace or an item is bought from the marketplace.
 * The trasaction hashes are hyper-linked to Sepolia etherscan website to verify the trasactions.
-  
 
+## 🛠️ Deployment Methods
+
+### 1. GitHub Pages (Recommended - Automated)
+- **Automatic deployment** on every push to main branch
+- **URL**: `https://yourusername.github.io/Blockchain_marketplace/`
+- **Setup**: Enable GitHub Pages in repository settings
+- **Cost**: Free
+- **Benefits**: Zero maintenance, automatic HTTPS, global CDN
+
+### 2. Google App Engine (Current Production)
+```bash
+# Manual deployment
+gcloud app deploy app.yaml
+gcloud app browse
+```
+- **URL**: https://blockchain-project-422215.uc.r.appspot.com/
+- **Cost**: Pay-per-use
+- **Benefits**: Scalable, Google Cloud integration
+
+### 3. Other Deployment Options
+
+#### Netlify
+1. Connect GitHub repository to Netlify
+2. Build command: `cp index.html app.js styles.css dist/`
+3. Publish directory: `dist`
+
+#### Vercel
+1. Import GitHub repository to Vercel
+2. Framework preset: Other
+3. Build command: `mkdir -p dist && cp *.html *.js *.css dist/`
+4. Output directory: `dist`
+
+#### Local Development
+```bash
+# Simple HTTP server
+python3 -m http.server 8000
+# or
+npx serve .
+```
+
+### 🔧 Development Workflow
+
+1. **Make changes** to HTML, CSS, or JavaScript
+2. **Test locally** using local server
+3. **Validate** using `./scripts/validate-deployment.sh`
+4. **Commit and push** to main branch
+5. **Automatic deployment** via GitHub Actions
+6. **Monitor** deployment in GitHub Actions tab
+
+### 📊 Monitoring
+
+- **GitHub Actions**: Monitor build and deployment status
+- **GitHub Pages**: Check deployment status in repository Settings
+- **Site Health**: Automated testing validates site accessibility
+- **Transaction Monitoring**: Use Sepolia Etherscan for blockchain transactions
 

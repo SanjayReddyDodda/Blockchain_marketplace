@@ -1,0 +1,39 @@
+{
+  "name": "blockchain-marketplace",
+  "version": "1.0.0",
+  "description": "A decentralized marketplace built on Ethereum blockchain with Web3 integration",
+  "main": "index.html",
+  "scripts": {
+    "validate": "./scripts/validate-deployment.sh",
+    "serve": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "mkdir -p build && cp index.html app.js styles.css build/",
+    "deploy": "echo 'Use GitHub Actions for deployment or gcloud app deploy for Google App Engine'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SanjayReddyDodda/Blockchain_marketplace.git"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "marketplace",
+    "web3",
+    "dapp",
+    "smart-contracts",
+    "metamask"
+  ],
+  "author": "SanjayReddyDodda",
+  "license": "MIT",
+  "dependencies": {
+    "web3": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

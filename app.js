@@ -1,8 +1,16 @@
 const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
 let contract;
 let userAccount;
+
+// Configuration - can be overridden via build process
+const CONFIG = {
+    contractAddress: '0x0a82432b3e404d62360849b619fA347803dAaa5e', // Default Sepolia testnet address
+    networkId: 11155111, // Sepolia testnet
+    networkName: 'Sepolia'
+};
+
 async function startApp() {
-    const contractAddress ='0x0a82432b3e404d62360849b619fA347803dAaa5e'; 
+    const contractAddress = CONFIG.contractAddress;
     const contractABI = [
         {
             "inputs": [
@@ -229,9 +237,34 @@ async function startApp() {
     renderItems();
 }
 async function connectWallet() {
-    const accounts = await web3.eth.requestAccounts();
-    userAccount = accounts[0];
-    document.getElementById('connectWallet').innerText = `Wallet Connected: ${userAccount.substring(0, 6)}...${userAccount.substring(38)}`;
+    try {
+        // Check if MetaMask is installed
+        if (typeof window.ethereum === 'undefined') {
+            alert('Please install MetaMask to use this application');
+            return;
+        }
+
+        const accounts = await web3.eth.requestAccounts();
+        userAccount = accounts[0];
+        
+        // Check network
+        const networkId = await web3.eth.net.getId();
+        if (networkId !== CONFIG.networkId) {
+            alert(`Please switch to ${CONFIG.networkName} network (Network ID: ${CONFIG.networkId}). Current network ID: ${networkId}`);
+            return;
+        }
+        
+        document.getElementById('connectWallet').innerText = `Wallet Connected: ${userAccount.substring(0, 6)}...${userAccount.substring(38)}`;
+        
+        console.log('Wallet connected successfully');
+        console.log('Account:', userAccount);
+        console.log('Network ID:', networkId);
+        console.log('Contract Address:', CONFIG.contractAddress);
+        
+    } catch (error) {
+        console.error('Error connecting wallet:', error);
+        alert('Failed to connect wallet. Please try again.');
+    }
 }
 async function listItem() {
     const title = document.getElementById('title').value;
