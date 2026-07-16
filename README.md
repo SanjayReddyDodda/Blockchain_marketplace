@@ -1,5 +1,6 @@
 # Blockchain_marketplace
 ### Project Link - https://blockchain-project-422215.uc.r.appspot.com/
+### GitHub Pages - https://sanjayReddyDodda.github.io/Blockchain_marketplace/
 
 ### Technologies Used
 * Remix IDE (for contract generation and deployment)
